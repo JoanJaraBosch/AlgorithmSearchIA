@@ -2,9 +2,28 @@ package classes;
 
 import java.util.*;
 
-public class Section {
+/**
+ * Classe per a generar estats 
+ * @author Joan
+ */
+public class Section{
 	private int value,position_x,position_y;
+	private float valueToOrder;
 	private LinkedList<int[]> road = new LinkedList<int[]>();
+	/**
+	 * Constructor de la classe section
+	 * @param value (valor de l'estat)
+	 * @param position_x (posicio x de l'estat)
+	 * @param position_y (posicio y de l'estat)
+	 * @param road (cami per arribar en aquest estat)
+	 */
+	public Section(int value,int position_x, int position_y, LinkedList<int[]> road, float valueToOrder) {
+		this.value=value;
+		this.position_x=position_x;
+		this.position_y=position_y;
+		this.road=road;
+		this.valueToOrder=valueToOrder;
+	}
 	
 	public Section(int value,int position_x, int position_y, LinkedList<int[]> road) {
 		this.value=value;
@@ -12,7 +31,12 @@ public class Section {
 		this.position_y=position_y;
 		this.road=road;
 	}
-	
+	/**
+	 * Constructor 2 de la classe section el qual serveix per a afegir a la llista de tractats sense problemes del cami
+	 * @param value (valor de l'estat)
+	 * @param position_x (posicio x de l'estat)
+	 * @param position_y (posicio y de l'estat)
+	 */
 	public Section(int value,int position_x, int position_y) {
 		this.value=value;
 		this.position_x=position_x;
@@ -23,32 +47,18 @@ public class Section {
 		return value;
 	}
 
-	public void setValue(int value) {
-		this.value = value;
-	}
-
 	public int getPosition_x() {
 		return position_x;
-	}
-
-	public void setPosition_x(int position_x) {
-		this.position_x = position_x;
 	}
 
 	public int getPosition_y() {
 		return position_y;
 	}
 
-	public void setPosition_y(int position_y) {
-		this.position_y = position_y;
-	}
-
 	public LinkedList<int[]> getRoad() {
 		return road;
 	}
-
-	public void setRoad(LinkedList<int[]> road) {
-		this.road = road;
+	public float getValueToOrder() {
+		return valueToOrder;
 	}
-	
 }
