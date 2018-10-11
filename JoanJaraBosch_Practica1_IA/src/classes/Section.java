@@ -8,7 +8,7 @@ import java.util.*;
  */
 public class Section{
 	private int value,position_x,position_y;
-	private float valueToOrder;
+	private float valueToOrder, valorAcc;
 	private LinkedList<int[]> road = new LinkedList<int[]>();
 	/**
 	 * Constructor de la classe section
@@ -17,12 +17,21 @@ public class Section{
 	 * @param position_y (posicio y de l'estat)
 	 * @param road (cami per arribar en aquest estat)
 	 */
-	public Section(int value,int position_x, int position_y, LinkedList<int[]> road, float valueToOrder) {
+	public Section(int value,int position_x, int position_y, LinkedList<int[]> road, float valorHeuristic, float valorAccumulatiu) {
 		this.value=value;
 		this.position_x=position_x;
 		this.position_y=position_y;
 		this.road=road;
-		this.valueToOrder=valueToOrder;
+		this.valueToOrder=valorHeuristic;
+		this.valorAcc=valorAccumulatiu;
+	}
+
+	public Section(int value,int position_x, int position_y, LinkedList<int[]> road, float valorHeuristic) {
+		this.value=value;
+		this.position_x=position_x;
+		this.position_y=position_y;
+		this.road=road;
+		this.valueToOrder=valorHeuristic;
 	}
 	
 	public Section(int value,int position_x, int position_y, LinkedList<int[]> road) {
@@ -60,5 +69,13 @@ public class Section{
 	}
 	public float getValueToOrder() {
 		return valueToOrder;
+	}
+	
+	public float getValorAcc() {
+		return valorAcc;
+	}
+
+	public void setValorAcc(float valorAcc) {
+		this.valorAcc = valorAcc;
 	}
 }

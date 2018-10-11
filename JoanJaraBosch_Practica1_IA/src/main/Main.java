@@ -59,6 +59,7 @@ public class Main {
 			gps.printResult(solution); //si te solucio la printara
 		}else {
 			A_estrella gps = new A_estrella(dimX,dimY,map,heuristica); //creem l'bjecete per a fer l'algorisme best first
+			initialSection.setValorAcc(0);
 			solution = gps.widthAlgorism(initialSection,finalSection); //cridem la funcio per a fer l'algorisme d'amplada
 			gps.printResult(solution); //si te solucio la printara
 		}
