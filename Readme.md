@@ -1,1 +1,1 @@
-# AI folder for university works
+# AI folder for university my work
